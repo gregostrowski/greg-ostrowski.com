@@ -1,0 +1,21 @@
+#map-canvas {
+    height: 100%;
+    margin: 0px;
+    padding: 0px
+}
+.map-holder {
+    height: 500px;
+    width: 100%;
+}
+.page-geo{
+    @extend .page-home;
+    padding: 10em;
+    font-size: 1.6em;
+    
+    .geoResults {
+        li {
+            letter-spacing: 1px;
+        }
+    }
+
+}

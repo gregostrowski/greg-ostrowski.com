@@ -1,0 +1,84 @@
+﻿<html lang="en" ng-app="website">
+    <head>
+        <title>Greg Ostrowski</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8" />
+        <meta name="author" content="Greg Ostrowski">
+        
+        <link href='https://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+        <!-- bower:css -->
+        <!-- endinject -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="../src/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../src/css/styles.css">
+        <!-- endinject -->
+        <script src="../src/js/modernizr.custom.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA3QloJMGZInhIFwH_QX6GRec9PkJYyo-k&amp;sensor=false"></script>
+
+    </head>
+    <body>
+        <div class="contain">
+			<div class="menu-wrap">
+				<nav class="menu-top">
+					<a href="/" class="profile"><span class="ring"><img src="../src/img/self.png" alt="Greg Ostrowski"/></span><span class="name">Greg Ostrowski</span></a>
+					<div class="icon-list">
+						<a href="http://github.com/gregostrowski" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+						<a href="https://www.linkedin.com/in/gregostrowski" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>						
+						<a href="http://codepen.io/onethru2/" target="_blank"><i class="fa fa-fw fa-codepen"></i></a>
+                        <a href="https://www.instagram.com/greg_ostrowski/" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ostrowskig" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+					</div>
+				</nav>
+				<nav class="menu-side">
+					<a href="#">Resume</a>
+                    <a class="active" href="javascript:;">GeoLocator</a>
+				</nav>
+			</div>
+			<button class="menu-button" id="open-button" aria-label="open menu"><span></span></button>
+			<div class="content-wrap">
+				<div class="content page page-geo">
+                        <div class="row">
+                            <div class="input-field col s4">                                
+                                <input class="submit validate" id="location" type="text" />
+                                <label for="location">Zip/Address</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <button class="searchGeocode btn btn-large"> Geocode </button>
+                                <span>
+                                    <input type="checkbox" class="fitToMap" id="fit" />
+                                    <label for="fit">Fit Points on Map</label>
+                                </span>
+                            </div>                            
+                         </div>
+                         <div class="row">
+                            <ul class='geoResults'>                            
+                            </ul>
+                        </div>
+
+                        <div class="map-holder" >
+                            <div id="map-canvas" ></div>
+                        </div>
+                        
+
+                    
+				</div>
+			</div><!-- /content-wrap -->
+		</div><!-- /contain -->
+             
+        
+        
+        <!-- bower:js -->
+        <!-- endinject -->
+        <!-- inject:js -->
+        <script src="../src/js/classie.js"></script>
+        <script src="../src/js/menu.js"></script>
+        <script src="../src/js/draggabilly.pkgd.min.js"></script>
+        <script src="../src/js/elastiStack.js"></script>
+        <script src="../src/js/materialize.min.js"></script>
+        <script src="Map.js"></script>
+        <!-- endinject -->   
+    </body>
+</html>
+

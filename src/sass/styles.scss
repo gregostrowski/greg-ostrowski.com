@@ -1,6 +1,10 @@
 @import "_variables";
 @import "_mixins";
+
+@import "materialize-src/sass/_materialize";
+
 @import "_menu";
 
 @import "_main";
-@import "_ig"
+@import "_ig";
+@import "_geo";
