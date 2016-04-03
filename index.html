@@ -1,0 +1,67 @@
+<html lang="en" ng-app="website">
+    <head>
+        <title>Greg Ostrowski</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8" />
+        <meta name="author" content="Greg Ostrowski">
+        
+        <link href='https://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+        <!-- bower:css -->
+        <!-- endinject -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="src/css/font-awesome.min.css">
+        <link rel="stylesheet" href="src/css/styles.css">
+        <!-- endinject -->
+        <script src="src/js/modernizr.custom.js"></script>
+    </head>
+    <body>
+        <div class="container">
+			<div class="menu-wrap">
+				<nav class="menu-top">
+					<a href="#" class="profile"><span class="ring"><img src="src/img/self.png" alt="Greg Ostrowski"/></span><span class="name">Greg Ostrowski</span></a>
+					<div class="icon-list">
+						<a href="http://github.com/gregostrowski" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+						<a href="https://www.linkedin.com/in/gregostrowski"><i class="fa fa-fw fa-linkedin"></i></a>						
+						<a href="http://codepen.io/onethru2/"><i class="fa fa-fw fa-codepen"></i></a>
+                        <a href="https://www.instagram.com/greg_ostrowski/"><i class="fa fa-fw fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ostrowskig"><i class="fa fa-fw fa-facebook"></i></a>
+					</div>
+				</nav>
+				<nav class="menu-side">
+					<a href="#">Resume</a>
+                    <a href="geo/">GeoLocator</a>
+				</nav>
+			</div>
+			<button class="menu-button" id="open-button" aria-label="open menu"><span></span></button>
+			<div class="content-wrap">
+				<div class="content page page-home">
+                        <div class='title'><span>Greg</span><span>Ostrowski</span></div>
+					    <div ng-controller="IGDisplayController">
+                            <ul id="elasticstack" class="ig-picture-container elasticstack" >
+                                <li ng-repeat="pic in pictures">
+                                    <img ng-if="!pic.videos" class="ig-pic-img" alt="{{$index}}"  ng-src="{{pic.images.low_resolution.url}}" />
+                                    <video ng-if="pic.videos" autoplay muted loop ng-poster="{{pic.images.low_resolution.url}}" class="ig-pic-img"  ng-class="{'middle': pic.videos.low_bandwidth.height < pic.videos.low_bandwidth.width}">
+                                        <source ng-src="{{trustSrc(pic.videos.low_bandwidth.url)}}" >
+                                    </video>
+                                </li>
+                            </ul>
+                        </div>
+				</div>
+			</div><!-- /content-wrap -->
+		</div><!-- /container -->
+             
+        
+        
+        <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <!-- endinject -->
+        <!-- inject:js -->
+        <script src="src/js/classie.js"></script>
+        <script src="src/js/menu.js"></script>
+        <script src="src/js/draggabilly.pkgd.min.js"></script>
+        <script src="src/js/elastiStack.js"></script>
+        <script src="src/js/app.js"></script>
+        <!-- endinject -->   
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "instagram-display",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Greg Ostrowski"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "dependencies": {
+    "angular": "~1.4.9"
+  }
+}
