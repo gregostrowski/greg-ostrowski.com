@@ -4108,7 +4108,11 @@ body,
   width: 100%;
   background: #f4f4f4;
   position: fixed;
-  z-index: 100; }
+  z-index: 100;
+  display: none; }
+  @media only screen and (max-width: 992px) {
+    .fixed-header {
+      display: block; } }
 
 * {
   -webkit-transition: all 0.2s ease 0s;

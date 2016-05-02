@@ -258,4 +258,9 @@ body,
     background: $primary-back;
     position: fixed;
     z-index: 100;
+    display: none;
+    
+    @media #{$medium-and-down} { 
+        display: block;   
+    }
 }
