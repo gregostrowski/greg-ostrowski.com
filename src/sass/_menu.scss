@@ -12,6 +12,10 @@ body,
 }
 
 .menu-wrap {
+    @media only screen and (max-width: 600px) {
+        font-size: 5px;
+    }
+    
     a {
         color: $menu-text-color;
         
@@ -26,11 +30,16 @@ body,
 	-webkit-overflow-scrolling: touch;
 	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
+    
+    @media only screen and (max-width: 600px) {
+        font-size: 5px;
+    }
 }
 
 .content {
 	position: relative;
 	background: $content-background;
+    min-height: 100vh;
     
     &::before {
         position: absolute;
@@ -52,16 +61,23 @@ body,
 /* Menu Button */
 .menu-button {
 	position: absolute;
-	z-index: 1000;
-	top: 30px;
-	left: 30px;
-	width: 30px;
-	height: 24px;
-	padding: 0;
-	cursor: pointer;
-	border: none;
-	outline: none;
-	background: transparent;
+    z-index: 1000;
+    top: 3em;
+    left: 3em;
+    width: 3em;
+    min-width: 30px;
+    min-height: 24px;
+    height: 2.4em;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: inherit;
+    
+    @media only screen and (max-width: 600px) {
+        font-size: 5px;
+    }
     
     &:hover {
         &::before, &::after, span {
@@ -218,8 +234,13 @@ body,
 
     .content-wrap,
     .menu-button {
-        -webkit-transform: translate3d(300px,60px,0);
-        transform: translate3d(300px,60px,0);
+        -webkit-transform: translate3d(30em,6em,0);
+        transform: translate3d(30em,6em,0);
+        
+         @media only screen and (max-width: 600px) {
+             -webkit-transform: translate3d(30em, 10em, 0);
+            transform: translate3d(30em, 10em, 0);
+         }
     }
 
     .content::before {
@@ -229,4 +250,12 @@ body,
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
     }
+}
+
+.fixed-header {
+    height: 8em;
+    width: 100%;    
+    background: $primary-back;
+    position: fixed;
+    z-index: 100;
 }
