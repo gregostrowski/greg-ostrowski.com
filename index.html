@@ -40,8 +40,8 @@
 					    <div ng-controller="IGDisplayController">
                             <ul id="elasticstack" class="ig-picture-container elasticstack" >
                                 <li ng-repeat="pic in pictures">
-                                    <img ng-if="!pic.videos" class="ig-pic-img" alt="{{$index}}"  ng-src="{{pic.images.low_resolution.url}}" />
-                                    <video ng-if="pic.videos" autoplay muted loop ng-poster="{{pic.images.low_resolution.url}}" class="ig-pic-img"  ng-class="{'middle': pic.videos.low_bandwidth.height < pic.videos.low_bandwidth.width}">
+                                    <img ng-if="!pic.videos || isMobile" class="ig-pic-img" alt="{{$index}}"  ng-src="{{pic.images.low_resolution.url}}" />
+                                    <video ng-if="pic.videos && !isMobile" autoplay muted loop ng-poster="{{pic.images.low_resolution.url}}" class="ig-pic-img"  ng-class="{'middle': pic.videos.low_bandwidth.height < pic.videos.low_bandwidth.width}">
                                         <source ng-src="{{trustSrc(pic.videos.low_bandwidth.url)}}" >
                                     </video>
                                 </li>

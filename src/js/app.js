@@ -21,6 +21,29 @@ var app = angular.module('website', [])
         $scope.containerWidth = 0; //pictures.length * imgWidth
         $scope.pictures = [];
         
+        var findMobile = {
+            Android: function() {
+                return navigator.userAgent.match(/Android/i);
+            },
+            BlackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            iOS: function() {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            Opera: function() {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            Windows: function() {
+                return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+            },
+            any: function() {
+                return (findMobile.Android() || findMobile.BlackBerry() || findMobile.iOS() || findMobile.Opera() || findMobile.Windows());
+            }
+        };
+        
+        $scope.isMobile = findMobile.any();
+        
         $scope.trustSrc = function(src) {
             return $sce.trustAsResourceUrl(src);
         }

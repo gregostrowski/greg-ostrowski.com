@@ -20,22 +20,22 @@
 $polaroid-color: #fff;
 .elasticstack {
 	position: relative;
-	margin: 40px auto;
+	margin: 4em auto;
 	padding: 0;
-	width: 340px;
-	height: 380px;
+	width: 34em;
+	height: 38em;
 	list-style: none;
-	-webkit-perspective: 1000px;
+	-webkit-perspective: 100em;
 	-webkit-perspective-origin: 50% 150%;
-	perspective: 1000px;
+	perspective: 100em;
 	perspective-origin: 50% 150%;
     
     li {
         position: absolute;
         z-index: 1;
-        width: 340px;
-        height: 380px;
-        border-width: 60px 20px;
+        width: 34em;
+        height: 38em;
+        border-width: 6em 2em;
         border-style: solid;
         border-color: $polaroid-color;
         background: $polaroid-color;

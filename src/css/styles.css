@@ -2185,13 +2185,13 @@
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #058ED9;
   text-align: center;
   letter-spacing: .5px;
   transition: .2s ease-out;
   cursor: pointer; }
   .btn:hover, .btn-large:hover {
-    background-color: #2bbbad; }
+    background-color: #069ef2; }
 
 .btn-floating {
   display: inline-block;
@@ -2203,7 +2203,7 @@
   height: 37px;
   line-height: 37px;
   padding: 0;
-  background-color: #26a69a;
+  background-color: #058ED9;
   border-radius: 50%;
   transition: .3s;
   cursor: pointer;
@@ -2216,7 +2216,7 @@
     font-size: 1.6rem;
     line-height: 37px; }
   .btn-floating:hover {
-    background-color: #26a69a; }
+    background-color: #058ED9; }
   .btn-floating:before {
     border-radius: 0; }
   .btn-floating.btn-large {
@@ -2283,7 +2283,7 @@ button.btn-floating {
   display: block; }
 
 select:focus {
-  outline: 1px solid #c9f3ef; }
+  outline: 1px solid #d0eefe; }
 
 button:focus {
   outline: none; }
@@ -2403,8 +2403,8 @@ textarea.materialize-textarea {
   input[type=number]:focus:not([readonly]),
   input[type=search]:focus:not([readonly]),
   textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #26a69a;
-    box-shadow: 0 1px 0 0 #26a69a; }
+    border-bottom: 1px solid #058ED9;
+    box-shadow: 0 1px 0 0 #058ED9; }
   input:not([type]):focus:not([readonly]) + label,
   input[type=text]:focus:not([readonly]) + label,
   input[type=password]:focus:not([readonly]) + label,
@@ -2418,7 +2418,7 @@ textarea.materialize-textarea {
   input[type=number]:focus:not([readonly]) + label,
   input[type=search]:focus:not([readonly]) + label,
   textarea.materialize-textarea:focus:not([readonly]) + label {
-    color: #26a69a; }
+    color: #058ED9; }
   input:not([type]).valid, input:not([type]):focus.valid,
   input[type=text].valid,
   input[type=text]:focus.valid,
@@ -2586,7 +2586,7 @@ textarea.materialize-textarea {
     font-size: 2rem;
     transition: color .2s; }
     .input-field .prefix.active {
-      color: #26a69a; }
+      color: #058ED9; }
   .input-field .prefix ~ input,
   .input-field .prefix ~ textarea {
     margin-left: 3rem;
@@ -2712,11 +2712,11 @@ textarea {
 [type="radio"]:checked + label:after,
 [type="radio"].with-gap:checked + label:before,
 [type="radio"].with-gap:checked + label:after {
-  border: 2px solid #26a69a; }
+  border: 2px solid #058ED9; }
 
 [type="radio"]:checked + label:after,
 [type="radio"].with-gap:checked + label:after {
-  background-color: #26a69a;
+  background-color: #058ED9;
   z-index: 0; }
 
 [type="radio"]:checked + label:after {
@@ -2822,8 +2822,8 @@ form p:last-child {
   height: 22px;
   border-top: 2px solid transparent;
   border-left: 2px solid transparent;
-  border-right: 2px solid #26a69a;
-  border-bottom: 2px solid #26a69a;
+  border-right: 2px solid #058ED9;
+  border-bottom: 2px solid #058ED9;
   transform: rotate(40deg);
   backface-visibility: hidden;
   transform-origin: 100% 100%; }
@@ -2840,7 +2840,7 @@ form p:last-child {
   height: 22px;
   border-top: none;
   border-left: none;
-  border-right: 2px solid #26a69a;
+  border-right: 2px solid #058ED9;
   border-bottom: none;
   transform: rotate(90deg);
   backface-visibility: hidden;
@@ -2899,8 +2899,8 @@ form p:last-child {
   top: 0;
   width: 20px;
   height: 20px;
-  border: 2px solid #26a69a;
-  background-color: #26a69a;
+  border: 2px solid #058ED9;
+  background-color: #058ED9;
   z-index: 0; }
 
 [type="checkbox"].filled-in.tabbed:focus + label:after {
@@ -2910,8 +2910,8 @@ form p:last-child {
 
 [type="checkbox"].filled-in.tabbed:checked:focus + label:after {
   border-radius: 2px;
-  background-color: #26a69a;
-  border-color: #26a69a; }
+  background-color: #058ED9;
+  border-color: #058ED9; }
 
 [type="checkbox"].filled-in:disabled:not(:checked) + label:before {
   background-color: transparent;
@@ -2945,9 +2945,9 @@ form p:last-child {
   width: 0;
   height: 0; }
   .switch label input[type=checkbox]:checked + .lever {
-    background-color: #84c7c1; }
+    background-color: #76bfe7; }
     .switch label input[type=checkbox]:checked + .lever:after {
-      background-color: #26a69a;
+      background-color: #058ED9;
       left: 24px; }
 
 .switch label .lever {
@@ -2977,7 +2977,7 @@ form p:last-child {
 
 input[type=checkbox]:checked:not(:disabled) ~ .lever:active::after,
 input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::after {
-  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(38, 166, 154, 0.1); }
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(5, 142, 217, 0.1); }
 
 input[type=checkbox]:not(:disabled) ~ .lever:active:after,
 input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
@@ -3139,7 +3139,7 @@ input[type=range] + .thumb {
   height: 0;
   width: 0;
   border-radius: 50%;
-  background-color: #26a69a;
+  background-color: #058ED9;
   top: 10px;
   margin-left: -6px;
   transform-origin: 50% 50%;
@@ -3148,7 +3148,7 @@ input[type=range] + .thumb {
     display: block;
     width: 30px;
     text-align: center;
-    color: #26a69a;
+    color: #058ED9;
     font-size: 0;
     transform: rotate(45deg); }
   input[type=range] + .thumb.active {
@@ -3173,7 +3173,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background-color: #26a69a;
+  background-color: #058ED9;
   transform-origin: 50% 50%;
   margin: -5px 0 0 0;
   transition: .3s; }
@@ -3196,7 +3196,7 @@ input[type=range]::-moz-range-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background: #26a69a;
+  background: #058ED9;
   margin-top: -5px; }
 
 input[type=range]:-moz-focusring {
@@ -3225,7 +3225,7 @@ input[type=range]::-ms-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background: #26a69a; }
+  background: #058ED9; }
 
 input[type=range]:focus::-ms-fill-lower {
   background: #888; }
@@ -3276,15 +3276,18 @@ body,
 .menu-button {
   position: absolute;
   z-index: 1000;
-  top: 30px;
-  left: 30px;
-  width: 30px;
-  height: 24px;
+  top: 3em;
+  left: 3em;
+  width: 3em;
+  min-width: 30px;
+  min-height: 24px;
+  height: 2.4em;
   padding: 0;
   cursor: pointer;
   border: none;
   outline: none;
-  background: transparent; }
+  background: transparent;
+  font-size: inherit; }
   .menu-button:hover::before, .menu-button:hover::after, .menu-button:hover span {
     background: #c0b283; }
   .menu-button::before, .menu-button::after, .menu-button span {
@@ -3333,11 +3336,11 @@ body,
   transition: opacity 1s; }
 
 .menu-top {
-  line-height: 58px; }
+  line-height: 5.8em; }
   .menu-top .profile {
     display: inline-block;
     padding: 8px 10px;
-    line-height: 42px; }
+    line-height: 4.2em; }
     .menu-top .profile:hover span {
       color: #c0b283; }
     .menu-top .profile:hover .ring {
@@ -3392,8 +3395,13 @@ body,
 
 .show-menu .content-wrap,
 .show-menu .menu-button {
-  -webkit-transform: translate3d(300px, 60px, 0);
-  transform: translate3d(300px, 60px, 0); }
+  -webkit-transform: translate3d(30em, 6em, 0);
+  transform: translate3d(30em, 6em, 0); }
+  @media only screen and (max-width: 600px) {
+    .show-menu .content-wrap,
+    .show-menu .menu-button {
+      -webkit-transform: translate3d(30em, 10em, 0);
+      transform: translate3d(30em, 10em, 0); } }
 
 .show-menu .content::before {
   opacity: 1;
@@ -3423,6 +3431,9 @@ body {
   font-size: 10px;
   font-family: 'Raleway', Helvetica, Arial, sans-serif;
   color: #373737; }
+  @media only screen and (max-width: 600px) {
+    body {
+      font-size: 5px; } }
 
 a {
   outline: none;
@@ -3445,6 +3456,9 @@ input {
 /* pages */
 .page {
   padding: 15em; }
+  @media only screen and (max-width: 992px) {
+    .page {
+      padding: 15em 5em; } }
 
 .page-home, .page-geo {
   width: 100%;
@@ -3454,6 +3468,9 @@ input {
     font-family: 'Lobster', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 10em;
     text-align: center; }
+    @media only screen and (max-width: 992px) {
+      .page-home .title, .page-geo .title {
+        font-size: 6em; } }
 
 /* Ilin */
 .link--ilin, .page-home .title, .page-geo .title {
@@ -3496,21 +3513,21 @@ input {
 
 .elasticstack {
   position: relative;
-  margin: 40px auto;
+  margin: 4em auto;
   padding: 0;
-  width: 340px;
-  height: 380px;
+  width: 34em;
+  height: 38em;
   list-style: none;
-  -webkit-perspective: 1000px;
+  -webkit-perspective: 100em;
   -webkit-perspective-origin: 50% 150%;
-  perspective: 1000px;
+  perspective: 100em;
   perspective-origin: 50% 150%; }
   .elasticstack li {
     position: absolute;
     z-index: 1;
-    width: 340px;
-    height: 380px;
-    border-width: 60px 20px;
+    width: 34em;
+    height: 38em;
+    border-width: 6em 2em;
     border-style: solid;
     border-color: #fff;
     background: #fff;

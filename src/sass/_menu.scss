@@ -53,15 +53,18 @@ body,
 .menu-button {
 	position: absolute;
 	z-index: 1000;
-	top: 30px;
-	left: 30px;
-	width: 30px;
-	height: 24px;
+	top: 3em;
+	left: 3em;
+	width: 3em;
+    min-width: 30px;
+    min-height: 24px;
+	height: 2.4em;
 	padding: 0;
 	cursor: pointer;
 	border: none;
 	outline: none;
 	background: transparent;
+    font-size: inherit;
     
     &:hover {
         &::before, &::after, span {
@@ -131,12 +134,12 @@ body,
 }
 
 .menu-top {
-	line-height: 58px;
+	line-height: 5.8em;
     
     .profile {
         display: inline-block;
         padding: 8px 10px;
-        line-height: 42px;
+        line-height: 4.2em;
         
         &:hover {
             span {
@@ -218,8 +221,13 @@ body,
 
     .content-wrap,
     .menu-button {
-        -webkit-transform: translate3d(300px,60px,0);
-        transform: translate3d(300px,60px,0);
+        -webkit-transform: translate3d(30em,6em,0);
+        transform: translate3d(30em,6em,0);
+        
+        @media #{$small-and-down} {
+            -webkit-transform: translate3d(30em,10em,0);
+            transform: translate3d(30em,10em,0);
+        }
     }
 
     .content::before {

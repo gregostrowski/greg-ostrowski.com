@@ -18,6 +18,10 @@ body {
     font-size: 10px;
     font-family: 'Raleway', Helvetica, Arial, sans-serif;
     color: $text-color;
+    
+    @media #{$small-and-down} {
+        font-size: 5px;
+    }
 }
 
 a {
@@ -50,6 +54,11 @@ input {
 /* pages */
 .page {
     padding: 15em;
+    
+    @media #{$medium-and-down} {
+        padding: 15em 5em;   
+    }
+    
 }
 .page-home {
     width: 100%;
@@ -60,6 +69,10 @@ input {
         font-size: 10em;
         text-align: center;
         @extend .link--ilin;
+        
+        @media #{$medium-and-down} {
+            font-size: 6em;
+        }
     }
 }
 
