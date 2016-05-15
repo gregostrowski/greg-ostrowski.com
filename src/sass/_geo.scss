@@ -9,8 +9,12 @@
 }
 .page-geo{
     @extend .page-home;
-    padding: 10em;
+    padding: 5em 10em;
     font-size: 1.6em;
+    
+    @media #{$medium-and-down} { 
+        padding: 5em 2em;   
+    }
     
     .geoResults {
         li {

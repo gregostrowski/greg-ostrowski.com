@@ -1,0 +1,82 @@
+.resume {
+    font-size: 10px;
+    &.page {
+        @media #{$medium-and-down} { 
+            padding: 10em 2em;
+        }
+    }
+    
+    .title {
+        font-family: 'Lobster', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 5em;
+        text-align: center;
+    }
+    .info {
+        text-align: center;
+        margin-bottom: 2em;
+        .phone, .email {
+            display: block;
+            font-size: 1.4em;
+        }
+    }
+    .resume-body {
+        font-size: 1.4em;
+    }
+    h3 {
+        text-transform: uppercase;
+        font-size: 2em;
+        margin: 0;
+        @media #{$medium-and-down} {
+            margin-bottom: .5em;
+        }
+    }
+    p {
+        margin-top: 0;
+    }
+    .resume-listing {
+        list-style: circle;
+        padding: 0 0 0 40px;
+        li {
+                list-style-type: inherit;
+            }
+    }
+    .position {
+        margin: 0 0 3em;
+        
+        h4 {
+            font-size: 1.6em;
+            margin-top: 0;
+            text-transform: uppercase;
+            
+            span {
+                margin-left: 1em;
+                font-size: .6em;
+                @media #{$medium-and-down} { 
+                    display: block;   
+                    margin-left: 0;
+                }
+            }
+        }
+        h5 {
+            font-size: 1.3em;
+        }
+        ul {
+            @extend .resume-listing;        
+        }
+    }
+    .tech {
+        h5 {
+            margin-top: 0;
+        }
+    }
+    .feedback {
+        font-style: italic;
+        margin-bottom: 15px;
+        q {
+            &:before, &:after {
+                font-weight: bold;
+                margin: 0 3px;
+            }
+        }
+    }
+}

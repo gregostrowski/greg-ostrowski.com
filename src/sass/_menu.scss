@@ -12,6 +12,10 @@ body,
 }
 
 .menu-wrap {
+    @media only screen and (max-width: 600px) {
+        font-size: 5px;
+    }
+    
     a {
         color: $menu-text-color;
         
@@ -26,11 +30,16 @@ body,
 	-webkit-overflow-scrolling: touch;
 	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
+    
+    @media only screen and (max-width: 600px) {
+        font-size: 5px;
+    }
 }
 
 .content {
 	position: relative;
 	background: $content-background;
+    min-height: 100vh;
     
     &::before {
         position: absolute;
@@ -52,19 +61,23 @@ body,
 /* Menu Button */
 .menu-button {
 	position: absolute;
-	z-index: 1000;
-	top: 3em;
-	left: 3em;
-	width: 3em;
+    z-index: 1000;
+    top: 3em;
+    left: 3em;
+    width: 3em;
     min-width: 30px;
     min-height: 24px;
-	height: 2.4em;
-	padding: 0;
-	cursor: pointer;
-	border: none;
-	outline: none;
-	background: transparent;
+    height: 2.4em;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
     font-size: inherit;
+    
+    @media only screen and (max-width: 600px) {
+        font-size: 5px;
+    }
     
     &:hover {
         &::before, &::after, span {
@@ -223,18 +236,30 @@ body,
     .menu-button {
         -webkit-transform: translate3d(30em,6em,0);
         transform: translate3d(30em,6em,0);
-        
+
         @media #{$small-and-down} {
             -webkit-transform: translate3d(30em,10em,0);
             transform: translate3d(30em,10em,0);
         }
     }
-
     .content::before {
         opacity: 1;
         -webkit-transition: opacity 0.3s;
         transition: opacity 0.3s;
         -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0);
+    }
+}
+
+.fixed-header {
+    height: 8em;
+    width: 100%;    
+    background: $primary-back;
+    position: fixed;
+    z-index: 100;
+    display: none;
+    
+    @media #{$medium-and-down} { 
+        display: block;   
     }
 }

@@ -52,7 +52,6 @@ $polaroid-color: #fff;
 	        transition: all 0.3s ease-out;
         }
         &.move-back {
-            /* http://matthewlein.com/ceaser/ */
             -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.470, 1); /* older webkit */
             -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.470, 1.515);
             transition-timing-function: cubic-bezier(0.175, 0.885, 0.470, 1.515);
