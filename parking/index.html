@@ -1,4 +1,4 @@
-﻿<html lang="en" ng-app="website">
+<html lang="en" ng-app="website">
     <head>
         <title>Greg Ostrowski</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8" />
@@ -15,7 +15,7 @@
         <!-- endinject -->
         <script src="../src/js/modernizr.custom.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3QloJMGZInhIFwH_QX6GRec9PkJYyo-k&amp;sensor=false"></script>
+	    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCubcEvSCieg2QOr99i33eINV7Mn9qH3vQ"></script>
 
     </head>
     <body>
@@ -39,29 +39,8 @@
 			<button class="menu-button" id="open-button" aria-label="open menu"><span></span></button>
 			<div class="content-wrap">
 				<div class="content page page-geo">
-                        <div class="row">
-                            <div class="input-field col s4">                                
-                                <input class="submit validate" id="location" type="text" />
-                                <label for="location">Zip/Address</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <button class="searchGeocode btn btn-large"> Geocode </button>
-                                <span>
-                                    <input type="checkbox" class="fitToMap" id="fit" />
-                                    <label for="fit">Fit Points on Map</label>
-                                </span>
-                            </div>                            
-                         </div>
-                         <div class="row">
-                            <ul class='geoResults'>                            
-                            </ul>
-                        </div>
 
-                        <div class="map-holder" >
-                            <div id="map-canvas" ></div>
-                        </div>
-                        
-
+                    <div id="map-canvas" ></div>
                     
 				</div>
 			</div><!-- /content-wrap -->
@@ -82,10 +61,11 @@
 
         <script>
             $(document).ready(function () {
-                gMap.Search.initSearch(".submit", ".searchGeocode");
-                gMap.Map.initMap("map-canvas", ".fitToMap");
+                gMap.Map.initMap("map-canvas");
+                setTimeout( function () {
+                    gMap.Location.watchLocation();
+                }, 1000);                
             });
-
         </script>
     </body>
 </html>

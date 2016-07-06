@@ -2,8 +2,8 @@
     Split these modules into their own files.
 */
 
-var Map = Map || {};
-Map.Search = (function () {
+var gMap = gMap || {};
+gMap.Search = (function () {
     var pub = {},
         _searchInput;
     
@@ -14,14 +14,14 @@ Map.Search = (function () {
         $(button).on('click', function () {
             if ($(_searchInput).val().length > 0) {
                 //This is where you'd define where you send the geo search results to
-                Map.Geo.getGeoLocationFromString($(_searchInput).val(), displayPointOnMap);
+                gMap.Geo.getGeoLocationFromString($(_searchInput).val(), displayPointOnMap);
                 $(_searchInput).val("");
             }
         });
 
         $(_searchInput).keyup(function(event){
             if(event.keyCode == 13 && $(_searchInput).val().length > 0){
-                Map.Geo.getGeoLocationFromString($(_searchInput).val(), displayPointOnMap);
+                gMap.Geo.getGeoLocationFromString($(_searchInput).val(), displayPointOnMap);
                 $(_searchInput).val("");
             }
         });
@@ -41,14 +41,14 @@ Map.Search = (function () {
             lng = geoResults[0].geometry.location.lng(),
             addr = geoResults[0].formatted_address;
 
-        Map.Map.setMapLocation(lat, lng, addr);
+        gMap.Map.setMapLocation(lat, lng, addr);
         displayGeoCode(lat, lng, addr, ".geoResults");
     }
 
     return pub;
 }());
 
-Map.Map = (function () {
+gMap.Map = (function () {
     var pub = {},
         _map,
         _canvas,
@@ -63,38 +63,54 @@ Map.Map = (function () {
 
         var mapOptions = {
             zoom: 15,
-            center: new google.maps.LatLng(41.879535, -87.624333), //this is chicago
+            center: new google.maps.LatLng(37.7632059, -122.24256200000002), //this is alameda
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI: true,
             zoomControl: true
         };
         _map = new google.maps.Map(document.getElementById(_canvas), mapOptions);
 
-        $(fitButton).click(function () {
-            if($(this).prop("checked")) {
-                pub.setBounds();
-            }
-        })
+        if(fitButton) { 
+            $(fitButton).click(function () {
+                if($(this).prop("checked")) {
+                    pub.setBounds();
+                }
+            });
+        }
+    };
+
+    pub.getMapObj = function () {
+        return _map;
     }
 
     //Set the Map's center to the the lat/lng passed as parameters
     pub.setMapLocation = function (lat, lng, title) {
         _map.setCenter(new google.maps.LatLng(lat, lng));
         pub.addMarker(lat, lng, title);
-    }
+    };
     //Add a marker at the position with title
-    pub.addMarker = function (lat, lng, title) {
+    pub.addMarker = function (lat, lng, title, markerIcon, infoWindowHtml) {
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(lat, lng),
-            map: _map,
-            title: title
-        });
+                position: new google.maps.LatLng(lat, lng),
+                map: _map,
+                title: title,
+                icon: markerIcon
+            });
+        if(infoWindowHtml) {
+            var infowindow = new google.maps.InfoWindow({
+                content: infoWindowHtml
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(_map,marker);
+            });
+        }
+
         _points.push(new google.maps.LatLng(lat, lng));
 
         if($(_fitButton).prop("checked")) {
             pub.setBounds();
         }
-    }
+    };
 
     //configures the view of the map to make sure all _points are visible
     //all points within _points should be google.maps.LatLng objects
@@ -106,12 +122,12 @@ Map.Map = (function () {
 
         //  Fit these bounds to the map
         _map.fitBounds(bounds);
-    }
+    };
 
     return pub;
 }());
 
-Map.Geo = (function () {
+gMap.Geo = (function () {
     var pub = {},
         _geocoder = new google.maps.Geocoder();
 			
@@ -129,13 +145,51 @@ Map.Geo = (function () {
     return pub;
 }());
 
+gMap.Location = (function () { 
+    var pub = {},
+        _selfIcon = '../src/img/loc.png',
+        loc_options = {
+            enableHighAccuracy: true, 
+            maximumAge        : 0, 
+            timeout           : 5000,
+            desiredAccuracy   : 0,
+            frequency         : 1
+        },
+        _selfMarker,
+        _watchId = null;
+
+    pub.getLocation = function () {
+    	navigator.geolocation.getCurrentPosition(getLocationSuccess, getLocationFailure);
+    };
+
+    pub.watchLocation = function () {
+        _watchId = navigator.geolocation.watchPosition(getLocationSuccess, getLocationFailure, loc_options);
+    };
+
+    function getLocationSuccess (position) { 
+        console.log('update position');
+        if(!_selfMarker) { 
+            _selfMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                map: gMap.Map.getMapObj(),
+                icon: _selfIcon
+            });
+        } else { 
+            var newPos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            _selfMarker.setPosition(newPos);
+        }
+    }
+
+    function getLocationFailure (position) { 
+        console.log('Error getting location');
+    }
+
+    return pub;
+}());
+
 function displayGeoCode(lat, lng, addr, list) {
     var item = $("<li></li>");
     item.append(addr + ": " + lat + ", " + lng);
     $(list).append(item);
 }
 
-$(document).ready(function () {
-    Map.Search.initSearch(".submit", ".searchGeocode");
-    Map.Map.initMap("map-canvas", ".fitToMap");
-});
