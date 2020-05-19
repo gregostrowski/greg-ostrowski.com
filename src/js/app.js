@@ -1,7 +1,7 @@
 var app = angular.module('website', [])
     .factory('instagram', ['$http', function ($http){
         var url = function (max_id) {
-            var access_token = "51213996.baa4240.d7e89f9c1fac405e94f9cd2347cb468b";
+            var access_token = "51213996.baa4240.fe30be86a015476280ed85aba7393749";
             return 'https://api.instagram.com/v1/users/self/media/recent/?' + (max_id ? ('max_id='+max_id + '&') : '') + 'access_token='+ access_token + '&callback=JSON_CALLBACK&count=33';
         };
         return {
