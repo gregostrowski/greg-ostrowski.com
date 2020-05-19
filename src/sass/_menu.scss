@@ -197,6 +197,10 @@ body,
         padding: 2em;
         border-bottom: 1px solid rgba($primary-color, .3);
         font-size: 1.6em;
+
+        &:last-child {
+            border-bottom: none;
+        }
     }
 }
 

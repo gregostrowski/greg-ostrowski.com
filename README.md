@@ -1,1 +1,1 @@
-# updating greg-ostrowski.com
+# updating gregostrowski.com
